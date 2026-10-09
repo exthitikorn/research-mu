@@ -1,0 +1,2024 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="คู่มือสรุปเนื้อหาเตรียมสอบฉบับสมบูรณ์ รายวิชา EGIT503 Research Methodology คณะวิศวกรรมศาสตร์ มหาวิทยาลัยมหิดล ครอบคลุมเนื้อหาครบถ้วนตามสไลด์ Lecture 1 ถึง Lecture 6">
+  <title>EGIT503 Research Methodology | คู่มือสรุปเนื้อหาเตรียมสอบฉบับสมบูรณ์ (Lecture 1 - 6)</title>
+  
+  <!-- Google Fonts: Prompt & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --font-body: 'Prompt', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-display: 'Plus Jakarta Sans', 'Prompt', sans-serif;
+      
+      /* Executive High-Contrast Light Theme (Sole Theme) */
+      --bg-primary: #f8fafc;
+      --bg-secondary: #ffffff;
+      --bg-card: #ffffff;
+      --bg-card-hover: #f1f5f9;
+      --border-color: #e2e8f0;
+      --border-accent: #2563eb;
+      
+      --text-main: #0f172a;
+      --text-muted: #334155;
+      --text-dim: #64748b;
+      
+      --accent-blue: #1d4ed8;
+      --accent-indigo: #4338ca;
+      --accent-purple: #6d28d9;
+      --accent-emerald: #047857;
+      --accent-amber: #b45309;
+      --accent-rose: #be123c;
+      --accent-cyan: #0e7490;
+      
+      --gradient-brand: linear-gradient(135deg, #1d4ed8 0%, #4338ca 50%, #6d28d9 100%);
+      --gradient-card: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      --shadow-sm: 0 1px 3px 0 rgba(15, 23, 42, 0.08), 0 1px 2px -1px rgba(15, 23, 42, 0.04);
+      --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.03);
+      --glow-blue: 0 0 25px rgba(29, 78, 216, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      line-height: 1.7;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Ambient Background Glow */
+    .ambient-glow {
+      position: fixed;
+      top: -200px;
+      right: -200px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(67, 56, 202, 0.04) 0%, transparent 70%);
+      filter: blur(80px);
+      z-index: 0;
+      pointer-events: none;
+    }
+    .ambient-glow-2 {
+      position: fixed;
+      bottom: -200px;
+      left: -200px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(29, 78, 216, 0.04) 0%, transparent 70%);
+      filter: blur(80px);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Top Sticky Navigation */
+    .top-navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background: rgba(255, 255, 255, 0.94);
+      border-bottom: 1px solid var(--border-color);
+      box-shadow: 0 1px 4px rgba(15, 23, 42, 0.05);
+      padding: 0.85rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .brand-badge {
+      background: var(--gradient-brand);
+      color: white;
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 0.3rem 0.65rem;
+      border-radius: 8px;
+      letter-spacing: 0.5px;
+      box-shadow: 0 2px 8px rgba(99, 102, 241, 0.4);
+    }
+    .brand-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+    .brand-subtitle {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      display: none;
+    }
+    @media (min-width: 768px) {
+      .brand-subtitle { display: inline; }
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .search-input-box {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .search-input {
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      border-radius: 20px;
+      padding: 0.45rem 1rem 0.45rem 2.2rem;
+      font-size: 0.875rem;
+      color: var(--text-main);
+      width: 170px;
+      transition: all 0.25s ease;
+      outline: none;
+      font-family: var(--font-body);
+    }
+    .search-input:focus {
+      width: 260px;
+      border-color: var(--accent-blue);
+      box-shadow: 0 0 10px rgba(56, 189, 248, 0.25);
+    }
+    .search-icon {
+      position: absolute;
+      left: 0.8rem;
+      color: var(--text-dim);
+      font-size: 0.9rem;
+      pointer-events: none;
+    }
+
+    .btn-action {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      padding: 0.45rem 0.85rem;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.2s ease;
+      font-family: var(--font-body);
+    }
+    .btn-action:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--border-accent);
+      transform: translateY(-1px);
+    }
+    .btn-primary-action {
+      background: var(--gradient-brand);
+      color: white;
+      border: none;
+      box-shadow: 0 2px 8px rgba(99, 102, 241, 0.35);
+    }
+    .btn-primary-action:hover {
+      box-shadow: 0 4px 14px rgba(99, 102, 241, 0.5);
+      color: white;
+    }
+
+    /* Main Container Layout */
+    .app-layout {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 290px 1fr;
+      max-width: 1600px;
+      margin: 0 auto;
+      gap: 2rem;
+      padding: 2rem 1.5rem;
+    }
+    @media (max-width: 1100px) {
+      .app-layout {
+        grid-template-columns: 1fr;
+        padding: 1.5rem 1rem;
+      }
+    }
+
+    /* Sticky Sidebar Navigation */
+    .sidebar {
+      position: sticky;
+      top: 5rem;
+      max-height: calc(100vh - 6rem);
+      overflow-y: auto;
+      background: var(--bg-card);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 1.25rem;
+      box-shadow: var(--shadow-sm);
+    }
+    @media (max-width: 1100px) {
+      .sidebar {
+        position: static;
+        max-height: none;
+        margin-bottom: 1.5rem;
+      }
+    }
+    .sidebar-header {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent-blue);
+      margin-bottom: 0.85rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .sidebar-menu {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .sidebar-link {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      padding: 0.55rem 0.75rem;
+      border-radius: 8px;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+    .sidebar-link:hover, .sidebar-link.active {
+      color: #1d4ed8;
+      background: #eff6ff;
+      border-left: 3px solid #2563eb;
+      padding-left: 0.85rem;
+      font-weight: 600;
+    }
+    .sidebar-icon {
+      font-size: 1rem;
+      color: var(--accent-blue);
+    }
+
+    /* Content Area */
+    .content-area {
+      display: flex;
+      flex-direction: column;
+      gap: 2.25rem;
+      min-width: 0;
+    }
+
+    /* Hero Banner */
+    .hero-banner {
+      background: linear-gradient(135deg, #f0fdf4 0%, #eff6ff 40%, #ffffff 100%);
+      border: 1px solid #bfdbfe;
+      border-radius: 20px;
+      padding: 2.25rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    .hero-banner::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 320px;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.05));
+      pointer-events: none;
+    }
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+      background: #dbeafe;
+      color: #1d4ed8;
+      border: 1px solid #bfdbfe;
+    }
+    .tag-purple {
+      background: #ede9fe;
+      color: #6d28d9;
+      border: 1px solid #ddd6fe;
+    }
+    .tag-amber {
+      background: #fef3c7;
+      color: #b45309;
+      border: 1px solid #fde68a;
+    }
+    .tag-emerald {
+      background: #d1fae5;
+      color: #047857;
+      border: 1px solid #a7f3d0;
+    }
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: 2.15rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      line-height: 1.3;
+      margin-bottom: 0.85rem;
+      color: #0f172a;
+      background: none;
+      -webkit-text-fill-color: initial;
+    }
+    .hero-desc {
+      color: var(--text-muted);
+      font-size: 1rem;
+      max-width: 860px;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Score breakdown metric grid */
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+      margin-top: 1.25rem;
+    }
+    .metric-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 0.9rem 1rem;
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+    .metric-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--border-accent);
+    }
+    .metric-val {
+      font-size: 1.5rem;
+      font-weight: 800;
+      font-family: var(--font-display);
+      color: var(--accent-blue);
+    }
+    .metric-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+    }
+
+    /* Content Cards & Sections */
+    .study-section {
+      background: var(--bg-card);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+    }
+    .section-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .section-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+    .section-icon-badge {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      background: rgba(56, 189, 248, 0.12);
+      color: var(--accent-blue);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+    }
+    .section-h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--text-main);
+      letter-spacing: -0.3px;
+    }
+    .section-sub {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.15rem;
+    }
+
+    /* Subsections */
+    .sub-section {
+      margin-top: 1.75rem;
+    }
+    .sub-title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .sub-title::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 18px;
+      background: var(--accent-blue);
+      border-radius: 4px;
+    }
+
+    /* Modern Responsive Data Tables */
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
+      margin: 1rem 0;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      background: var(--bg-secondary);
+    }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+      text-align: left;
+    }
+    .data-table th {
+      background: #f8fafc;
+      padding: 0.85rem 1rem;
+      font-weight: 700;
+      color: #1e40af;
+      border-bottom: 2px solid #cbd5e1;
+      border-bottom: 1px solid var(--border-color);
+      white-space: nowrap;
+    }
+    .data-table td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border-color);
+      color: var(--text-main);
+      vertical-align: top;
+    }
+    .data-table tr:last-child td {
+      border-bottom: none;
+    }
+    .data-table tr:hover td {
+      background: #f8fafc;
+    }
+
+    /* Alert / Callout Boxes */
+    .callout {
+      border-radius: 12px;
+      padding: 1.1rem 1.25rem;
+      margin: 1.25rem 0;
+      display: flex;
+      gap: 0.85rem;
+      align-items: flex-start;
+      border-left: 4px solid;
+      background: #f8fafc;
+      font-size: 0.9rem;
+    }
+    .callout-icon {
+      font-size: 1.25rem;
+      line-height: 1;
+    }
+    .callout-trap {
+      border-left-color: #e11d48;
+      background: #fff1f2;
+      border: 1px solid #fecdd3;
+      border-left-width: 4px;
+      color: #881337;
+    }
+    .callout-tip {
+      border-left-color: #059669;
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      border-left-width: 4px;
+      color: #064e3b;
+    }
+    .callout-info {
+      border-left-color: #2563eb;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-left-width: 4px;
+      color: #1e3a8a;
+    }
+
+    /* Cards Grid */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.25rem;
+      margin: 1rem 0;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+    .info-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 1.25rem;
+      transition: all 0.2s ease;
+    }
+    .info-card:hover {
+      border-color: var(--border-accent);
+      transform: translateY(-2px);
+    }
+    .card-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Interactive Calculator Section */
+    .calc-card {
+      background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
+      border: 1px solid #bfdbfe;
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      box-shadow: var(--shadow-sm);
+    }
+    .calc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      align-items: end;
+      margin-bottom: 1.25rem;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
+    }
+    .form-control {
+      width: 100%;
+      background: var(--bg-primary);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 0.6rem 0.85rem;
+      color: var(--text-main);
+      font-size: 0.95rem;
+      font-family: var(--font-body);
+      outline: none;
+    }
+    .form-control:focus {
+      border-color: var(--accent-blue);
+      box-shadow: 0 0 8px rgba(56, 189, 248, 0.25);
+    }
+    .calc-result-box {
+      background: #ffffff;
+      border: 2px dashed #2563eb;
+      border-radius: 12px;
+      padding: 1.25rem;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(37, 99, 235, 0.06);
+    }
+    .calc-result-val {
+      font-size: 2.2rem;
+      font-weight: 800;
+      font-family: var(--font-display);
+      color: var(--accent-blue);
+    }
+    .calc-result-note {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+
+    /* Interactive Flashcard Deck */
+    .flashcard-deck {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1rem;
+    }
+    .flashcard {
+      perspective: 1000px;
+      height: 220px;
+      cursor: pointer;
+    }
+    .flashcard-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      transform-style: preserve-3d;
+      border-radius: 16px;
+    }
+    .flashcard.flipped .flashcard-inner {
+      transform: rotateY(180deg);
+    }
+    .flashcard-front, .flashcard-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      border-radius: 16px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+    }
+    .flashcard-front {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-top: 3px solid var(--accent-blue);
+      box-shadow: var(--shadow-sm);
+    }
+    .flashcard-back {
+      background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
+      border: 1px solid #bfdbfe;
+      border-top: 3px solid var(--accent-indigo);
+      transform: rotateY(180deg);
+      text-align: left;
+      align-items: flex-start;
+      overflow-y: auto;
+      box-shadow: var(--shadow-sm);
+    }
+    .flashcard-q {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 0.75rem;
+    }
+    .flashcard-hint {
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .flashcard-a {
+      font-size: 0.875rem;
+      color: #1e293b;
+      line-height: 1.6;
+    }
+
+    /* Print styles */
+    @media print {
+      body {
+        background: white !important;
+        color: black !important;
+      }
+      .top-navbar, .sidebar, .ambient-glow, .ambient-glow-2, .btn-action, .search-input-box {
+        display: none !important;
+      }
+      .app-layout {
+        display: block !important;
+        padding: 0 !important;
+      }
+      .study-section {
+        background: white !important;
+        border: 1px solid #ddd !important;
+        box-shadow: none !important;
+        page-break-inside: avoid;
+        margin-bottom: 2rem !important;
+        color: black !important;
+      }
+      .data-table th, .data-table td {
+        border-color: #ddd !important;
+        color: black !important;
+      }
+      .flashcard-back {
+        position: static !important;
+        transform: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient Glow -->
+  <div class="ambient-glow"></div>
+  <div class="ambient-glow-2"></div>
+
+  <!-- Top Sticky Navigation -->
+  <header class="top-navbar">
+    <div class="brand-group">
+      <span class="brand-badge">EGIT503</span>
+      <div>
+        <h1 class="brand-title">Research Methodology Master Guide</h1>
+        <span class="brand-subtitle">คณะวิศวกรรมศาสตร์ มหาวิทยาลัยมหิดล (Lectures 1–6)</span>
+      </div>
+    </div>
+    
+    <div class="nav-actions">
+      <div class="search-input-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" class="search-input" placeholder="ค้นหาเนื้อหา / คีย์เวิร์ด..." onkeyup="filterContent()">
+      </div>
+      <button class="btn-action btn-primary-action" onclick="window.print()" title="พิมพ์หรือบันทึก PDF">
+        <span>🖨️</span> พิมพ์ / PDF
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Layout -->
+  <div class="app-layout">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <span>สารบัญสไลด์ 1–6</span>
+        <span>📑</span>
+      </div>
+      <ul class="sidebar-menu">
+        <li><a href="#overview" class="sidebar-link active"><span class="sidebar-icon">📌</span> บริบทรายวิชา & เกณฑ์คะแนน</a></li>
+        <li><a href="#lec1" class="sidebar-link"><span class="sidebar-icon">🔬</span> Lec 1: ปรัชญา & กระบวนการวิจัย</a></li>
+        <li><a href="#lec2" class="sidebar-link"><span class="sidebar-icon">📚</span> Lec 2: ฐานข้อมูล & คุณภาพวิจัย</a></li>
+        <li><a href="#lec3" class="sidebar-link"><span class="sidebar-icon">🔍</span> Lec 3: วรรณกรรม & ทฤษฎี TISM</a></li>
+        <li><a href="#lec4" class="sidebar-link"><span class="sidebar-icon">📐</span> Lec 4: การพัฒนาหัวข้อ & การทดลอง</a></li>
+        <li><a href="#lec5" class="sidebar-link"><span class="sidebar-icon">👥</span> Lec 5: การสุ่มตัวอย่าง & การวัด</a></li>
+        <li><a href="#calculator" class="sidebar-link"><span class="sidebar-icon">🧮</span> เครื่องมือคำนวณขนาดตัวอย่าง</a></li>
+        <li><a href="#lec6" class="sidebar-link"><span class="sidebar-icon">📝</span> Lec 6: Proposal, วิทยานิพนธ์ & IRB</a></li>
+        <li><a href="#scenarios" class="sidebar-link"><span class="sidebar-icon">💡</span> วิเคราะห์โจทย์สอบ & สูตรอัตนัย</a></li>
+        <li><a href="#flashcards" class="sidebar-link"><span class="sidebar-icon">⚡</span> Interactive Flashcards (16 ใบ)</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content-area">
+      
+      <!-- Hero Banner -->
+      <section class="hero-banner" id="overview">
+        <div class="hero-tags">
+          <span class="tag">EGIT503 Research Methodology</span>
+          <span class="tag tag-purple">IT Management / TISM</span>
+          <span class="tag tag-amber">Grad School Mahidol</span>
+          <span class="tag tag-emerald">Midterm & Final Prep</span>
+        </div>
+        <h2 class="hero-title">คู่มือเตรียมสอบวิทยาระเบียบวิธีวิจัยฉบับสมบูรณ์</h2>
+        <p class="hero-desc">
+          สังเคราะห์อย่างละเอียดจากสไลด์บรรยายชุดสมบูรณ์ <strong>Lecture 1 ถึง Lecture 6</strong> โดย <strong>ผศ.ดร.ยอด สุขะมงคล</strong> (ผู้รับผิดชอบรายวิชา), <strong>ผศ.ดร.ณตา ทับทิมจรูญ</strong> และ <strong>รศ.ดร.สุภาพร เกียรติสิน</strong> ครอบคลุมทั้งปรัชญา การออกแบบวิจัย ทฤษฎีด้าน IT/IS การสุ่มตัวอย่าง การวัด NOIR การคำนวณ Cochran/Yamane โครงสร้างเล่มวิทยานิพนธ์ และกระบวนการขอจริยธรรมการวิจัย MU-CIRB
+        </p>
+        
+        <div class="metric-grid">
+          <div class="metric-card">
+            <div class="metric-val">15%</div>
+            <div class="metric-label">Attendance (เข้าเรียน)</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-val">20%</div>
+            <div class="metric-label">Quiz & การบ้าน</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-val">15%</div>
+            <div class="metric-label">Class Activity (กิจกรรมกลุ่ม)</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-val">20%</div>
+            <div class="metric-label">Midterm Exam (สอบกลางภาค)</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-val">30%</div>
+            <div class="metric-label">Proposal & Paper (เล่ม & บทความ)</div>
+          </div>
+        </div>
+
+        <div style="margin-top: 1.25rem; font-size: 0.85rem; color: var(--text-muted); display: flex; flex-wrap: wrap; gap: 1.5rem;">
+          <span>📖 <strong>ตำราอ้างอิงหลัก 1:</strong> C.R. Kothari (1985, 2004) *Research Methodology*</span>
+          <span>📖 <strong>ตำราอ้างอิงหลัก 2:</strong> Neil J. Salkind (1997) *Exploring Research*</span>
+        </div>
+      </section>
+
+      <!-- SECTION 1: LECTURE 1 -->
+      <section class="study-section" id="lec1">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <div class="section-icon-badge">🔬</div>
+            <div>
+              <h2 class="section-h2">Lecture 1: ปรัชญา พื้นฐาน และกระบวนการวิจัย</h2>
+              <div class="section-sub">Research Fundamentals, Philosophy, Classifications & Strategic Trade-offs</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sub-section">
+          <h3 class="sub-title">1.1 นิยามและความหมายของการวิจัย (What is Research?)</h3>
+          <div class="grid-2">
+            <div class="info-card">
+              <div class="card-title">📖 D. Slesinger & M. Stephenson (1930)</div>
+              <p style="font-size:0.875rem; color:var(--text-muted); font-style:italic;">
+                "The manipulation of things, concepts or symbols for the purpose of generalizing to extend, correct or verify knowledge, whether that knowledge aids in construction of theory or in the practice of an art."
+              </p>
+              <p style="font-size:0.85rem; margin-top:0.5rem;">
+                การจัดการกับสิ่งต่าง ๆ แนวคิด หรือสัญลักษณ์ เพื่อสรุปอ้างอิงไปสู่กฎเกณฑ์ทั่วไป ขยาย แก้ไข หรือพิสูจน์ความรู้
+              </p>
+            </div>
+            <div class="info-card">
+              <div class="card-title">🇹🇭 สำนักงานราชบัณฑิตยสภา</div>
+              <p style="font-size:0.875rem; color:var(--text-muted);">
+                "กระบวนการหาความรู้ เป็นวิธีหาความรู้อย่างมีระเบียบและหลักเกณฑ์ทางวิชาการ มีการกำหนดแนวคิด ทฤษฎี การใช้ข้อมูล แปลความหมาย และอธิบายข้อมูลเพื่อให้เกิดองค์ความรู้ใหม่ รวมทั้งสร้างความรู้ใหม่ขึ้นจากความรู้เดิมร่วมกับข้อมูลใหม่"
+              </p>
+            </div>
+          </div>
+
+          <div class="callout callout-info">
+            <span class="callout-icon">💡</span>
+            <div>
+              <strong>วัฏจักรพื้นฐานของการวิจัย:</strong> Issue & Problems ➔ Research Questions ➔ Research Process ➔ New Knowledge & Solutions
+            </div>
+          </div>
+        </div>
+
+        <div class="sub-section">
+          <h3 class="sub-title">1.2 มิติปรัชญาวิจัย: Ontology, Epistemology และ Positivism vs Interpretivism</h3>
+          <div class="table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>มิติการเปรียบเทียบ</th>
+                  <th>ปฏิชีวนิยม (Positivism / Quantitative)</th>
+                  <th>ตีความนิยม (Interpretivism / Qualitative)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Ontology (สัจวิทยา)</strong><br><small>ธรรมชาติของความจริง</small></td>
+                  <td>ความจริงมีเพียงหนึ่งเดียว เป็นวัตถุวิสัย (Objective Reality) ดำรงอยู่อย่างอิสระจากผู้วิจัย</td>
+                  <td>ความจริงมีหลากหลาย เป็นอัตวิสัย (Subjective Realities) ถูกสร้างขึ้นตามบริบทและการตีความ</td>
+                </tr>
+                <tr>
+                  <td><strong>Epistemology (ญาณวิทยา)</strong><br><small>การได้มาซึ่งความรู้</small></td>
+                  <td>ค้นหากฎเกณฑ์เชิงสาเหตุ (Cause-and-effect laws) และมุ่งสรุปอ้างอิงระดับประชากร (Generalizability)</td>
+                  <td>ทำความเข้าใจปรากฏการณ์ (In-depth Understanding) บริบท และความหมายเชิงลึกผ่านประสบการณ์</td>
+                </tr>
+                <tr>
+                  <td><strong>เครื่องมือ & วิธีเก็บข้อมูล</strong></td>
+                  <td>เครื่องมือมาตรฐาน แบบสอบถามสเกลตัวเลข การทดลอง สถิติ</td>
+                  <td>การสัมภาษณ์เชิงลึก การสังเกตการณ์ การวิเคราะห์บริบททางสังคม</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="sub-section">
+          <h3 class="sub-title">1.3 การจำแนกประเภทงานวิจัยตามเกณฑ์มาตรฐาน (Salkind, 1997 & Kothari, 2004)</h3>
+          <div class="grid-3">
+            <div class="info-card">
+              <div class="card-title">1. Based on Methods</div>
+              <ul style="font-size:0.85rem; padding-left:1.2rem; color:var(--text-muted);">
+                <li><strong>Historical:</strong> ศึกษาอดีตเชื่อมโยงสู่ปัจจุบัน</li>
+                <li><strong>Descriptive:</strong> อธิบายสภาวะปัจจุบัน (Survey, Case Study, Content Analysis)</li>
+                <li><strong>Correlational:</strong> ตรวจสอบความสัมพันธ์หรือทำนาย</li>
+                <li><strong>Qualitative:</strong> คุณภาพ พฤติกรรม บริบท</li>
+                <li><strong>Experimental:</strong> ทดสอบสาเหตุและผล</li>
+              </ul>
+            </div>
+            <div class="info-card">
+              <div class="card-title">2. Based on Purposes</div>
+              <ul style="font-size:0.85rem; padding-left:1.2rem; color:var(--text-muted);">
+                <li><strong>Basic / Pure / Fundamental:</strong> สร้างทฤษฎีบริสุทธิ์เพื่อความรู้ (เช่น กฎนิวตัน, ทฤษฎีสัมพัทธภาพ)</li>
+                <li><strong>Applied / Development:</strong> แก้ปัญหาจริงและพัฒนา (R&D, Action Research, Evaluation Research)</li>
+              </ul>
+            </div>
+            <div class="info-card">
+              <div class="card-title">3. Based on Ability to Experiment</div>
+              <ul style="font-size:0.85rem; padding-left:1.2rem; color:var(--text-muted);">
+                <li><strong>True Experimental:</strong> สุ่มสมบูรณ์ ควบคุมตัวแปรสูง</li>
+                <li><strong>Quasi-experimental:</strong> ควบคุมไม่สมบูรณ์ ไม่สุ่มกลุ่ม</li>
+                <li><strong>Non-experimental:</strong> เชิงพรรณนา สหสัมพันธ์ สำรวจ</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="sub-section">
+          <h3 class="sub-title">1.4 ข้อแลกเปลี่ยน 3 มิติในการเลือกหัวข้อวิจัย (Topic Selection Trade-offs)</h3>
+          <div class="grid-3">
+            <div class="info-card">
+              <div class="card-title">แคบและลึก vs กว้างและตื้น</div>
+              <p style="font-size:0.85rem;"><strong>Narrow & Deep:</strong> ขยายพรมแดนความรู้สูง ตื่นเต้น แต่อาจเป็นนามธรรมเกินไป (เช่น New CNN Algorithm)</p>
+              <p style="font-size:0.85rem; margin-top:0.35rem;"><strong>Wide & Shallow:</strong> สมจริง ฝึกฝนงานอุตสาหกรรมดี แต่น่าเบื่อ โอกาสสร้างนวัตกรรมต่ำ</p>
+            </div>
+            <div class="info-card">
+              <div class="card-title">พื้นฐาน vs ประยุกต์</div>
+              <p style="font-size:0.85rem;"><strong>Fundamental:</strong> วิทยานิพนธ์อายุยืนยาว ประยุกต์ได้กว้าง แต่ขยายขอบเขตยากมาก (เช่น Maslow, Relativity)</p>
+              <p style="font-size:0.85rem; margin-top:0.35rem;"><strong>Applied:</strong> หางานง่าย แก้ปัญหาง่าย แต่วิทยานิพนธ์ล้าสมัยเร็ว (Die young)</p>
+            </div>
+            <div class="info-card">
+              <div class="card-title">คลาสสิก vs ยอดนิยม (Hot)</div>
+              <p style="font-size:0.85rem;"><strong>Classical:</strong> คุณภาพวิทยาศาสตร์สูง ผู้ทรงคุณวุฒิเข้ม แต่ท้อถอยง่าย ผลตอบแทนระยะสั้นน้อย</p>
+              <p style="font-size:0.85rem; margin-top:0.35rem;"><strong>Hot Topic:</strong> ตีพิมพ์ง่าย ฟีดแบ็กเร็ว มีชุมชนคึกคัก แต่คุณภาพอาจต่ำและตกรุ่นเร็ว (เช่น Fintech, Web3)</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="sub-section">
+          <h3 class="sub-title">1.5 แบบจำลองในการวิจัย (Physical vs Statistical Models)</h3>
+          <p style="font-size:0.875rem; color:var(--text-muted); margin-bottom:0.75rem;">
+            นักวิจัยสร้าง Model เพื่อตัดรายละเอียดที่ไม่จำเป็นออก (Abstract away non-essential details):
+          </p>
+          <div class="grid-2">
+            <div class="info-card">
+              <div class="card-title">⚙️ Physical Model</div>
+              <p style="font-size:0.875rem; font-family:monospace; background:rgba(0,0,0,0.2); padding:0.5rem; border-radius:6px;">
+                v = √(2gh)<br>
+                Ep = mgh<br>
+                Ek = (1/2)mv²
+              </p>
+            </div>
+            <div class="info-card">
+              <div class="card-title">📊 Statistical Model (Normal Distribution PDF)</div>
+              <p style="font-size:0.875rem; font-family:monospace; background:rgba(0,0,0,0.2); padding:0.5rem; border-radius:6px;">
+                f(x) = (1 / (σ√(2π))) * e^(-(x-μ)² / (2σ²))
+              </p>
+              <small style="color:var(--text-dim);">เมื่อ μ = mean, σ = standard deviation, π = 3.14159, e = 2.71828</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: LECTURE 2 -->
+      <section class="study-section" id="lec2">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <div class="section-icon-badge">📚</div>
+            <div>
+              <h2 class="section-h2">Lecture 2: ฐานข้อมูลวิจัยและคุณภาพงานวิจัย</h2>
+              <div class="section-sub">TISM Pillars, Databases, Fair Use, Peer Review & Quality Indicators (JCR, SJR, Quartiles)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sub-section">
+          <h3 class="sub-title">2.1 สามเสาหลักงานวิจัย TISM (Technology of Information System Management)</h3>
+          <div class="grid-3">
+            <div class="info-card" style="border-top:3px solid var(--accent-blue);">
+              <div class="card-title">1. Management</div>
+              <p style="font-size:0.85rem; color:var(--text-muted);">
+                Business, Finance, Marketing, Human Resource (HR), Knowledge Management (KM), Project Management
+              </p>
+            </div>
+            <div class="info-card" style="border-top:3px solid var(--accent-purple);">
+              <div class="card-title">2. IT Domain Expert</div>
+              <p style="font-size:0.85rem; color:var(--text-muted);">
+                Data Science, Machine Learning, Decision Support (DSS), Network, Programming, MIS, BI, Data Mining, AI, Digital Transformation
+              </p>
+            </div>
+            <div class="info-card" style="border-top:3px solid var(--accent-emerald);">
+              <div class="card-title">3. Research Method</div>
+              <p style="font-size:0.85rem; color:var(--text-muted);">
+                Survey + Statistics, Conceptual & Empirical Method, Data Analytics, Math Model, Simulation Model
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="sub-section">
+          <h3 class="sub-title">2.2 ฐานข้อมูลงานวิจัย (Academic Databases vs Publishers)</h3>
+          <div class="table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>กลุ่มสาขา</th>
+                  <th>ฐานข้อมูลและสำนักพิมพ์สำคัญ</th>
+                  <th>จุดเด่น / รายละเอียด</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Multidisciplinary</strong> (สหสาขา)</td>
+                  <td>Scopus, Web of Science (WoS), ScienceDirect (Elsevier), SpringerLink, Wiley, EDS</td>
+                  <td>ครอบคลุมวารสารนานาชาติทั่วโลก ดัชนีหลักที่ใช้คำนวณการจัดอันดับมหาวิทยาลัยโลก (QS, THE)</td>
+                </tr>
+                <tr>
+                  <td><strong>Electrical & Computer Science</strong></td>
+                  <td><strong>IEEE Xplore Digital Library</strong> (Service Type: Publisher & Database)</td>
+                  <td>มีเอกสารมากกว่า 7 ล้านรายการ ครอบคลุม Electrical, Electronics, Comm, Comp Engineering, CS และ IT</td>
+                </tr>
+                <tr>
+                  <td><strong>Medical & Health</strong></td>
+                  <td>PubMed (Database), Ovid, Karger</td>
+                  <td>วิทยาศาสตร์สุขภาพและการแพทย์</td>
+                </tr>
+                <tr>
+                  <td><strong>National Databases</strong> (ประเทศไทย)</td>
+                  <td><strong>TCI</strong> (Thai-Journal Citation Index), <strong>ThaiJo</strong></td>
+                  <td>ศูนย์รวมวารสารวิชาการออนไลน์ของไทย แบ่งกลุ่ม TCI กลุ่ม 1 และกลุ่ม 2</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="callout callout-trap">
+            <span class="callout-icon">⚠️</span>
+            <div>
+              <strong>กฎเหล็ก Fair Use ของการใช้ฐานข้อมูลอิเล็กทรอนิกส์:</strong><br>
+              • มหาวิทยาลัยบอกรับสิทธิในราคาวิชาการ (Academic Price)<br>
+              • <strong>ห้าม</strong> ใช้ Robot, Crawler, Script หรือ Download Manager ในการดาวน์โหลดบทความเด็ดขาด<br>
+              • <strong>ห้าม</strong> ดาวน์โหลดบทความทั้งฉบับ (Whole issue) เพราะส่อเจตนาที่ไม่ใช่การศึกษาเฉพาะบุคคล<br>
+              • หากเกิดการละเมิด สำนักพิมพ์จะสั่ง <strong>Block IP ทั้งมหาวิทยาลัย</strong> ทันที
+            </div>
+          </div>
+        </div>
+
+        <div class="sub-section">
+          <h3 class="sub-title">2.3 ตัวชี้วัดคุณภาพงานวิจัย (Research Quality Indicators)</h3>
+          <div class="grid-2">
+            <div class="info-card">
+              <div class="card-title">🔍 Peer Review Process</div>
+              <p style="font-size:0.85rem; color:var(--text-muted);">
+                การประเมินคุณภาพงานวิชาการโดยผู้เชี่ยวชาญที่มีความรู้เท่าเทียมกัน (Peers) ถือเป็นการกำกับดูแลตนเองของวิชาชีพ (Self-regulation)
+              </p>
+            </div>
+            <div class="info-card">
+              <div class="card-title">💳 Subscription vs Open Access</div>
+              <p style="font-size:0.85rem; color:var(--text-muted);">
+                <strong>Subscription:</strong> ผู้อ่าน/สถาบันจ่ายค่าสมาชิก ผู้เขียนไม่ต้องจ่ายค่าตีพิมพ์<br>
+                <strong>Open Access:</strong> ผู้อ่านเข้าถึงฟรี ผู้เขียนจ่ายค่า APC (Article Processing Charge)
+              </p>
+            </div>
+            <div class="info-card">
+              <div class="card-title">📈 Journal Impact Factor (JCR)</div>
+              <p style="font-size:0.85rem; color:var(--text-muted);">
+                จัดทำโดย Clarivate (Web of Science) คำนวณจากจำนวนการอ้างอิงเฉลี่ยของบทความในวารสารนั้นย้อนหลัง 2 ปี
+              </p>
+            </div>
+            <div class="info-card">
+              <div class="card-title">🌐 SJR Indicator (SCImago Journal Rank)</div>
+              <p style="font-size:0.85rem; color:var(--text-muted);">
+                พัฒนาจากฐานข้อมูล Scopus คำนวณการอ้างอิงถ่วงน้ำหนักย้อนหลัง 3 ปี โดยคำนึงถึงเกียรติยศและคุณภาพของวารสารที่มาอ้างอิง (Prestige weighted)
+              </p>
+            </div>
+          </div>
+
+          <div style="margin-top:1rem;">
+            <h4 style="font-size:0.95rem; font-weight:600; margin-bottom:0.5rem; color:var(--accent-blue);">Journal Quartile Score (Q1 – Q4):</h4>
+            <div class="grid-4">
+              <div class="info-card" style="border-color:var(--accent-emerald); text-align:center;">
+                <div style="font-size:1.3rem; font-weight:800; color:var(--accent-emerald);">Q1</div>
+                <div style="font-size:0.8rem; color:var(--text-muted);">Top 25% (สูงสุดในสาขา)</div>
+              </div>
+              <div class="info-card" style="border-color:var(--accent-blue); text-align:center;">
+                <div style="font-size:1.3rem; font-weight:800; color:var(--accent-blue);">Q2</div>
+                <div style="font-size:0.8rem; color:var(--text-muted);">25% – 50% (กลางค่อนสูง)</div>
+              </div>
+              <div class="info-card" style="border-color:var(--accent-amber); text-align:center;">
+                <div style="font-size:1.3rem; font-weight:800; color:var(--accent-amber);">Q3</div>
+                <div style="font-size:0.8rem; color:var(--text-muted);">50% – 75% (กลางค่อนต่ำ)</div>
+              </div>
+              <div class="info-card" style="border-color:var(--accent-rose); text-align:center;">
+                <div style="font-size:1.3rem; font-weight:800; color:var(--accent-rose);">Q4</div>
+                <div style="font-size:0.8rem; color:var(--text-muted);">Bottom 25% (กลุ่มท้ายสาขา)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 3: LECTURE 3 -->
+      <section class="study-section" id="lec3">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <div class="section-icon-badge">🔍</div>
+            <div>
+              <h2 class="section-h2">Lecture 3: การทบทวนวรรณกรรมและทฤษฎีสำคัญใน TISM</h2>
+              <div class="section-sub">Literature Review, Reference Management, 5 Types of Gaps & 8 Theoretical Domains</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sub-section">
+          <h3 class="sub-title">3.1 ช่องว่างการวิจัย 5 ประเภท (Five Types of Research Gaps)</h3>
+          <div class="table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>ประเภทช่องว่างการวิจัย (Research Gap)</th>
+                  <th>นิยามและสถานการณ์ที่เกิดขึ้น</th>
+                  <th>ตัวอย่างในบริบทเทคโนโลยีสารสนเทศ</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>1. Knowledge-based Gap</strong></td>
+                  <td>เกิดขึ้นเมื่อยังไม่มีความรู้ หรือมีความรู้ไม่เพียงพอเกี่ยวกับปรากฏการณ์นั้น (พบบ่อยที่สุด)</td>
+                  <td>ผลกระทบของการนำ Generative AI Agent มาทำงานร่วมกับวิศวกรซอฟต์แวร์</td>
+                </tr>
+                <tr>
+                  <td><strong>2. Relationship-based Gap</strong></td>
+                  <td>รู้จักตัวแปรแต่ละตัวเป็นอย่างดี แต่ยังไม่แน่ใจหรือยังไม่มีใครศึกษาความสัมพันธ์ระหว่างกัน</td>
+                  <td>ศึกษาความสัมพันธ์ระหว่างระดับภาระการรู้คิด (Cognitive Load) กับความไว้วางใจในผลลัพธ์ของ AI</td>
+                </tr>
+                <tr>
+                  <td><strong>3. Theory-based Gap</strong></td>
+                  <td>ทฤษฎีเดิมยังไม่เคยถูกทดสอบในบริบทใหม่ หรือผลการทดสอบทฤษฎีในอดีตมีความขัดแย้งกัน</td>
+                  <td>การประยุกต์ทฤษฎี TAM ในกลุ่มผู้สูงอายุที่ใช้งานอุปกรณ์ IoT ทางการแพทย์</td>
+                </tr>
+                <tr>
+                  <td><strong>4. Methodological Gap</strong></td>
+                  <td>ปรากฏการณ์นี้เคยศึกษาด้วยวิธีหนึ่ง แต่งานนี้เลือกใช้ระเบียบวิธีวิจัยแบบใหม่</td>
+                  <td>เดิมใช้แบบสอบถามวัดความพึงพอใจ แต่งานนี้เปลี่ยนมาใช้วิเคราะห์ System Logs และ EEG</td>
+                </tr>
+                <tr>
+                  <td><strong>5. Analytical Gap</strong></td>
+                  <td>ปรากฏการณ์นี้ยังไม่เคยวิเคราะห์ด้วยแนวทางการวิเคราะห์เฉพาะ (เช่น เชิงปริมาณ vs คุณภาพ หรือ Advanced ML)</td>
+                  <td>ใช้ Causal Inference และ Deep Learning วิเคราะห์ชุดข้อมูลเดิมที่เคยทำเพียงสถิติพรรณนา</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="sub-section">
+          <h3 class="sub-title">3.2 ทฤษฎีและตัวแบบสำคัญ 8 กลุ่มในงานวิจัย TISM (Theoretical Domains)</h3>
+          <div class="grid-2">
+            <div class="info-card">
+              <div class="card-title">1. Technology Adoption & Usage</div>
+              <p style="font-size:0.85rem; color:var(--accent-blue); margin-bottom:0.25rem;">Q: ทำไมคนจึงยอมรับ ใช้ หรือไม่ใช้เทคโนโลยี?</p>
+              <p style="font-size:0.85rem; color:var(--text-muted);">
+                <strong>ทฤษฎี:</strong> TAM, UTAUT, UTAUT2, TPB (Planned Behavior), TRA (Reasoned Action), DOI (Diffusion of Innovations), TRI (Technology Readiness Index)
+              </p>
+            </div>
+            <div class="info-card">
+              <div class="card-title">2. Information Systems Success & Quality</div>
+              <p style="font-size:0.85rem; color:var(--accent-blue); margin-bottom:0.25rem;">Q: ระบบสารสนเทศประสบความสำเร็จหรือมีคุณภาพหรือไม่?</p>
+              <p style="font-size:0.85rem; color:var(--text-muted);">
+                <strong>ทฤษฎี:</strong> DeLone & McLean IS Success Model (วัด 3 มิติคุณภาพ: System Quality ความเสถียร, Information Quality ความถูกต้อง, Service Quality การสนับสนุน ➔ Use, Satisfaction, Net Benefits)
+              </p>
+            </div>
+            <div class="info-card">
+              <div class="card-title">3. Trust, Risk, Privacy & Security</div>
+              <p style="font-size:0.85rem; color:var(--accent-blue); margin-bottom:0.25rem;">Q: ความไว้วางใจ ความเสี่ยง และความเป็นส่วนตัวส่งผลต่อการใช้เทคโนโลยีอย่างไร?</p>
+              <p style="font-size:0.85rem; color:var(--text-muted);">
+                <strong>ทฤษฎี:</strong> Trust Theory, Perceived Risk Theory, Privacy Calculus Theory (ชั่งน้ำหนักประโยชน์ vs ข้อมูลส่วนตัว), Protection Motivation Theory (PMT), Institution-Based Trust
+              </p>
+            </div>
+            <div class="info-card">
+              <div class="card-title">4. Digital Consumer & Experience</div>
+              <p style="font-size:0.85rem; color:var(--accent-blue); margin-bottom:0.25rem;">Q: ผู้บริโภคมีพฤติกรรมอย่างไรและเกิดความภักดีต่อบริการดิจิทัลได้อย่างไร?</p>
+              <p style="font-size:0.85rem; color:var(--text-muted);">
+                <strong>ทฤษฎี:</strong> S-O-R (Stimulus-Organism-Response Model), Expectation-Confirmation Theory (ECT), Customer Satisfaction, Customer Loyalty, SERVQUAL, Customer Experience Theory
+              </p>
+            </div>
+            <div class="info-card">
+              <div class="card-title">5. Organization & Digital Transformation</div>
+              <p style="font-size:0.85rem; color:var(--accent-blue); margin-bottom:0.25rem;">Q: องค์กรตัดสินใจนำนวัตกรรมหรือเทคโนโลยีมาใช้อย่างไร?</p>
+              <p style="font-size:0.85rem; color:var(--text-muted);">
+                <strong>ทฤษฎี:</strong> TOE Framework (Technology-Organization-Environment), DOI, Resource-Based View (RBV / VRIO), Institutional Theory, Socio-Technical Systems Theory
+              </p>
+            </div>
+            <div class="info-card">
+              <div class="card-title">6. AI, Data Science & HCI</div>
+              <p style="font-size:0.85rem; color:var(--accent-blue); margin-bottom:0.25rem;">Q: การทำงานของ AI และปฏิสัมพันธ์ระหว่างมนุษย์กับระบบฉลาดเป็นอย่างไร?</p>
+              <p style="font-size:0.85rem; color:var(--text-muted);">
+                <strong>ทฤษฎี:</strong> Decision Theory, Bayesian Theory, Human-Computer Interaction (HCI), UX Theory, Cognitive Theory (ภาระทางสมอง), Flow Theory (สภาวะลื่นไหล), Trust in AI
+              </p>
+            </div>
+            <div class="info-card">
+              <div class="card-title">7. Digital Implementation & Tech Stack</div>
+              <p style="font-size:0.85rem; color:var(--accent-blue); margin-bottom:0.25rem;">Q: การพัฒนา AI/Platform แบ่งเป็นกี่กลุ่มและใช้เทคนิคอะไรได้บ้าง?</p>
+              <p style="font-size:0.85rem; color:var(--text-muted);">
+                Machine Learning, Deep Learning, Generative AI (LLM, RAG, Prompt Engineering, Fine-tuning), MLOps, Data Engineering (ETL/ELT), System Architecture (Microservices, Cloud/Edge), Human-AI Interfaces
+              </p>
+            </div>
+            <div class="info-card">
+              <div class="card-title">8. AI / Platform Evaluation (7 มิติ)</div>
+              <p style="font-size:0.85rem; color:var(--accent-blue); margin-bottom:0.25rem;">Q: AI หรือ Platform ที่พัฒนาขึ้นมีวิธีการประเมินอย่างไร?</p>
+              <p style="font-size:0.85rem; color:var(--text-muted);">
+                1. Accuracy/Effectiveness, 2. Reliability & Robustness, 3. System Performance, 4. Usability & UX (SUS), 5. Trust & Explainability, 6. User Satisfaction (TAM/UTAUT), 7. Real-world Impact
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 4: LECTURE 4 -->
+      <section class="study-section" id="lec4">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <div class="section-icon-badge">📐</div>
+            <div>
+              <h2 class="section-h2">Lecture 4: การพัฒนาหัวข้อและการออกแบบการวิจัย</h2>
+              <div class="section-sub">Topic Patterns, Hypotheses, Research Design Blueprint & 3 Principles of Experiment</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sub-section">
+          <h3 class="sub-title">4.1 รูปแบบการพัฒนาหัวข้อวิจัย 5 แนวทาง</h3>
+          <div class="grid-3">
+            <div class="info-card">
+              <div class="card-title">1. New Question, New Topic</div>
+              <p style="font-size:0.85rem; color:var(--text-muted);">โจทย์ใหม่ บนหัวข้อใหม่เอี่ยม นวัตกรรมระดับบุกเบิก</p>
+            </div>
+            <div class="info-card">
+              <div class="card-title">2. Old Question, New Dimension</div>
+              <p style="font-size:0.85rem; color:var(--text-muted);">คำถามเดิม แต่มองในมุมมอง บริบท หรือกลุ่มประชากรใหม่</p>
+            </div>
+            <div class="info-card">
+              <div class="card-title">3. New Issue with Solution</div>
+              <p style="font-size:0.85rem; color:var(--text-muted);">ประเด็นปัญหาใหม่ที่เพิ่งเกิดขึ้น พร้อมเสนอวิธีแก้เชิงระบบ</p>
+            </div>
+            <div class="info-card">
+              <div class="card-title">4. Old Issue, New Idea</div>
+              <p style="font-size:0.85rem; color:var(--text-muted);">ปัญหาเดิมที่ค้างคา นำเทคนิคหรือไอเดียใหม่มาคลี่คลาย</p>
+            </div>
+            <div class="info-card" style="grid-column: span 2;">
+              <div class="card-title">5. Emerging Practical Issues (No Question in books)</div>
+              <p style="font-size:0.85rem; color:var(--text-muted);">
+                ปัญหาในโลกจริง เช่น <strong>กรณีศึกษา Grab Taxi / Sharing Economy</strong> (ผู้มีส่วนได้ส่วนเสีย: คนขับ Grab, คนขับแท็กซี่เดิม, ผู้โดยสาร, ภาครัฐ) หรือ <strong>Wireless Charger for EV</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="sub-section">
+          <h3 class="sub-title">4.2 สมมติฐานการวิจัย: Null vs Research Hypotheses</h3>
+          <div class="grid-2">
+            <div class="info-card">
+              <div class="card-title">Null Hypothesis (H₀: สมมติฐานว่าง)</div>
+              <p style="font-size:0.875rem; color:var(--text-muted);">
+                ระบุว่า <strong>ไม่มีความแตกต่าง</strong> หรือ <strong>ไม่มีความสัมพันธ์</strong> ระหว่างตัวแปร เช่น H₀: μ₁ = μ₂ (รายได้เฉลี่ยของคนขับ Grab ไม่แตกต่างจากคนขับแท็กซี่ทั่วไป)
+              </p>
+            </div>
+            <div class="info-card">
+              <div class="card-title">Research Hypothesis (H₁: สมมติฐานวิจัย)</div>
+              <ul style="font-size:0.85rem; padding-left:1.2rem; color:var(--text-muted);">
+                <li><strong>Nondirectional (ไม่มีทิศทาง):</strong> แตกต่างกันแต่ไม่ระบุว่าใครมากกว่า เช่น "รายได้เฉลี่ยของคนขับ Grab แตกต่างจากคนขับแท็กซี่ทั่วไป" (H₁: μ₁ ≠ μ₂)</li>
+                <li><strong>Directional (มีทิศทาง):</strong> ระบุทิศทางชัดเจน เช่น "รายได้เฉลี่ยของคนขับ Grab <em>สูงกว่า</em> คนขับแท็กซี่ทั่วไป" (H₁: μ₁ > μ₂)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="sub-section">
+          <h3 class="sub-title">4.3 ตัวแปรและมโนทัศน์ในการวิจัยเชิงทดลอง (Experimental Concepts & Variables)</h3>
+          <div class="table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>ตัวแปร / มโนทัศน์</th>
+                  <th>นิยามความหมาย</th>
+                  <th>คำศัพท์ทางวิชาการอื่นที่ใช้แทนกัน</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Dependent Variable (DV)</strong><br><small>ตัวแปรตาม</small></td>
+                  <td>ตัวแปรที่ถูกวัดค่าเพื่อดูผลว่าได้รับผลกระทบจากการปรับเปลี่ยนตัวแปรอิสระหรือไม่</td>
+                  <td><strong>Outcome variable</strong>, Results variable, <strong>Criterion variable</strong></td>
+                </tr>
+                <tr>
+                  <td><strong>Independent Variable (IV)</strong><br><small>ตัวแปรอิสระ/ตัวแปรต้น</small></td>
+                  <td>ตัวแปรที่ผู้วิจัยปรับเปลี่ยน (Manipulate) เพื่อดูผลกระทบต่อตัวแปรตาม</td>
+                  <td><strong>Treatment variable</strong>, Factor, <strong>Predictor variable</strong></td>
+                </tr>
+                <tr>
+                  <td><strong>Control Variable</strong><br><small>ตัวแปรควบคุม</small></td>
+                  <td>ตัวแปรที่เกี่ยวข้องกับตัวแปรตาม ซึ่งผู้วิจัยต้องขจัดอิทธิพลออกไปจากการศึกษา</td>
+                  <td><strong>Restricting variable</strong></td>
+                </tr>
+                <tr>
+                  <td><strong>Extraneous Variable</strong><br><small>ตัวแปรแทรกซ้อน</small></td>
+                  <td>ตัวแปรอิสระอื่นที่ไม่ได้อยู่ในวัตถุประสงค์ของการวิจัย แต่สามารถส่งผลกระทบต่อตัวแปรตามได้</td>
+                  <td><strong>Threatening variable</strong></td>
+                </tr>
+                <tr>
+                  <td><strong>Confounded Relationship</strong><br><small>ความสัมพันธ์ที่สับสน</small></td>
+                  <td colspan="2">สภาวะที่ความสัมพันธ์ระหว่าง IV และ DV ได้รับอิทธิพลจากตัวแปรแทรกซ้อนจนไม่สามารถสรุปสาเหตุที่แท้จริงได้</td>
+                </tr>
+                <tr>
+                  <td><strong>Experimental vs Control Group</strong></td>
+                  <td colspan="2"><strong>กลุ่มควบคุม (Control):</strong> ได้รับเงื่อนไขปกติ | <strong>กลุ่มทดลอง (Experimental):</strong> ได้รับเงื่อนไขใหม่ (Treatment)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="sub-section">
+          <h3 class="sub-title">4.4 หลักการ 3 ประการของการออกแบบการวิจัยเชิงทดลอง (Fisher & Kothari)</h3>
+          <div class="grid-3">
+            <div class="info-card" style="border-top:3px solid var(--accent-blue);">
+              <div class="card-title">1. Randomization (การสุ่ม)</div>
+              <p style="font-size:0.85rem; color:var(--text-muted);">
+                จัดสรรหน่วยทดลองเข้าสู่กลุ่มทดลองโดยสุ่ม เพื่อ <strong>ขจัดอคติ (Bias)</strong> และกระจายความแปรปรวนของตัวแปรแทรกซ้อนที่ไม่สามารถควบคุมได้ให้เท่าเทียมกันทุกกลุ่ม
+              </p>
+            </div>
+            <div class="info-card" style="border-top:3px solid var(--accent-purple);">
+              <div class="card-title">2. Replication (การทำซ้ำ)</div>
+              <p style="font-size:0.85rem; color:var(--text-muted);">
+                ทำการทดลองซ้ำหลายครั้งกับหน่วยทดลองหลายหน่วย เพื่อ <strong>ลดความคลาดเคลื่อนในการทดลอง (Experimental error)</strong> และเพิ่มความน่าเชื่อถือทางสถิติ
+              </p>
+            </div>
+            <div class="info-card" style="border-top:3px solid var(--accent-emerald);">
+              <div class="card-title">3. Local Control (การควบคุมในพื้นที่)</div>
+              <p style="font-size:0.85rem; color:var(--text-muted);">
+                ลดความแปรปรวนที่ไม่เกี่ยวข้องโดยการ <strong>ปรับสมดุล (Balancing)</strong> และการ <strong>จัดบล็อก (Blocking)</strong> รวมหน่วยทดลองที่คล้ายคลึงกันไว้ในกลุ่มเดียวกัน
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 5: LECTURE 5 -->
+      <section class="study-section" id="lec5">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <div class="section-icon-badge">👥</div>
+            <div>
+              <h2 class="section-h2">Lecture 5: การสุ่มตัวอย่าง การวัด และเครื่องมือวิจัย</h2>
+              <div class="section-sub">10 Instruments, IOC Verification, Sampling Designs, CLT & Primary Scales (NOIR)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sub-section">
+          <h3 class="sub-title">5.1 เครื่องมือเก็บรวบรวมข้อมูล 10 ประเภท (Methods & Instruments)</h3>
+          <div class="table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>วิธีการเก็บข้อมูล (Method)</th>
+                  <th>เครื่องมือที่ใช้ (Instrument)</th>
+                  <th>บริบทการใช้งานในงานวิจัย</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>1. Survey (การสำรวจ)</td><td><strong>Questionnaire</strong> / Online Questionnaire</td><td>แบบสอบถามสเกล Likert ข้อมูลประชากรศาสตร์</td></tr>
+                <tr><td>2. Interview (การสัมภาษณ์)</td><td><strong>Interview Guide</strong> / Protocol (5 ขั้นตอน)</td><td>สัมภาษณ์เชิงลึก (Opening, Grand tour, Specific, Probing, Closing)</td></tr>
+                <tr><td>3. Observation (การสังเกต)</td><td><strong>Observation Form</strong> / Checklist / Field Notes</td><td>บันทึกพฤติกรรมจริงในสถานที่ทำงาน/สภาพแวดล้อม</td></tr>
+                <tr><td>4. Experiment (การทดลอง)</td><td><strong>Experimental Protocol</strong> / Measurement Device</td><td>ขั้นตอนการทดลอง อุปกรณ์วัดค่าทางวิศวกรรม/ซอฟต์แวร์</td></tr>
+                <tr><td>5. Focus Group (สนทนากลุ่ม)</td><td><strong>Discussion Guide</strong> / Moderator Guide</td><td>กลุ่มย่อย 6–10 คน บรรยากาศปลอดภัย ไร้การครอบงำ</td></tr>
+                <tr><td>6. Document Analysis</td><td><strong>Document Review Form</strong> / Coding Scheme</td><td>วิเคราะห์เอกสาร นโยบาย สัญญา หรือ Content Analysis</td></tr>
+                <tr><td>7. Test / Assessment</td><td><strong>Test / Assessment Form / Rubric</strong></td><td>แบบวัดทักษะ เกณฑ์คะแนนรูบริกที่มีตัวชี้วัดเชิงพฤติกรรมชัดเจน</td></tr>
+                <tr><td>8. System Log / Digital Trace</td><td><strong>Log Files / Analytics Tools / Database</strong></td><td>ข้อมูลจราจรคอมพิวเตอร์ เวลาตอบสนอง อัตราความผิดพลาดจริง</td></tr>
+                <tr><td>9. Secondary Data</td><td><strong>Existing Records / Database / Reports</strong></td><td>สถิติของรัฐ ข้อมูลงบการเงิน รายงานประจำปี</td></tr>
+                <tr><td>10. Delphi Technique</td><td><strong>Delphi Questionnaire</strong> / Expert Form</td><td>สอบถามผู้เชี่ยวชาญแบบปิดชื่อหลายรอบเพื่อหาฉันทามติ</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="sub-section">
+          <h3 class="sub-title">5.2 การตรวจสอบคุณภาพเครื่องมือ: IOC และความเที่ยง (Reliability)</h3>
+          <div class="grid-2">
+            <div class="info-card">
+              <div class="card-title">✅ ดัชนีความสอดคล้อง IOC (Content Validity)</div>
+              <ul style="font-size:0.85rem; padding-left:1.2rem; color:var(--text-muted);">
+                <li><strong>ผู้เชี่ยวชาญ:</strong> ต้องเป็นจำนวนคี่ (3 หรือ 5 ท่าน) ครอบคลุม 3 ด้าน: Content, Research Method, Practitioner ผู้ปฏิบัติงานจริง</li>
+                <li><strong>คุณวุฒิ:</strong> ป.โทขึ้นไป/ป.เอก ประสบการณ์ตรงไม่น้อยกว่า 5 ปี (หรือ 10 ปี) มาจากหลายหน่วยงาน</li>
+                <li><strong>การให้คะแนน:</strong> +1 (สอดคล้อง), 0 (ไม่แน่ใจ), -1 (ไม่สอดคล้อง)</li>
+                <li><strong>เกณฑ์ผ่าน:</strong> IOC = (ΣR / N) ≥ 0.50 (หาก < 0.50 ต้องปรับปรุงหรือตัดทิ้ง)</li>
+              </ul>
+            </div>
+            <div class="info-card">
+              <div class="card-title">🎯 ความเที่ยง (Reliability & Pilot Test)</div>
+              <ul style="font-size:0.85rem; padding-left:1.2rem; color:var(--text-muted);">
+                <li><strong>Try-out:</strong> ทดลองใช้เครื่องมือกับกลุ่มใกล้เคียงกลุ่มตัวอย่างจริงจำนวน <strong>30 คน</strong></li>
+                <li><strong>Cronbach's Alpha (α):</strong> วัดความสอดคล้องภายในของข้อคำถาม Likert Scale</li>
+                <li><strong>เกณฑ์ยอมรับ:</strong> α ≥ 0.70</li>
+                <li><em>Reliability เป็นเงื่อนไขจำเป็นแต่ยังไม่เพียงพอสำหรับ Validity</em></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="sub-section">
+          <h3 class="sub-title">5.3 ทฤษฎีขีดจำกัดส่วนกลางและสถิติเชิงอนุมาน (CLT & Normal Distribution)</h3>
+          <div class="grid-2">
+            <div class="info-card">
+              <div class="card-title">🔔 Central Limit Theorem (CLT)</div>
+              <p style="font-size:0.85rem; color:var(--text-muted);">
+                ไม่ว่าประชากรจะแจกแจงแบบใด หากขนาดตัวอย่างมีขนาดใหญ่เพียงพอ (<strong>n ≥ 30</strong>) การแจกแจงของค่าเฉลี่ยตัวอย่าง (x̄) จะเข้าใกล้การแจกแจงปกติ:
+              </p>
+              <p style="font-size:0.85rem; font-family:monospace; margin-top:0.5rem; background:rgba(0,0,0,0.2); padding:0.5rem; border-radius:6px;">
+                E(x̄) = μ<br>
+                SD(x̄) = σ / √n (Standard Error of Mean)
+              </p>
+            </div>
+            <div class="info-card">
+              <div class="card-title">🏛️ Parameter vs Statistic</div>
+              <p style="font-size:0.85rem; color:var(--text-muted);">
+                <strong>Parameter (ประชากร - อักษรกรีก):</strong> Mean = μ, Variance = σ², SD = σ<br>
+                <strong>Statistic (กลุ่มตัวอย่าง - อักษรโรมัน):</strong> Mean = x̄, Variance = s², SD = s<br>
+                <em>สถิติอนุมานใช้ค่าสถิติ x̄ ไปประมาณค่าพารามิเตอร์ μ</em>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="sub-section">
+          <h3 class="sub-title">5.4 ระดับการวัด 4 ขั้น (Primary Scales of Measurement: NOIR)</h3>
+          <div class="table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>ระดับการวัด</th>
+                  <th>ลักษณะพื้นฐาน</th>
+                  <th>ตัวอย่างการตลาด/ไอที</th>
+                  <th>สถิติพรรณนา</th>
+                  <th>สถิติอนุมาน</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Nominal</strong> (นามบัญญัติ)</td>
+                  <td>ตัวเลขระบุหมวดหมู่ ไม่มีความหมายเชิงปริมาณหรืออันดับ</td>
+                  <td>เพศ, ระบบปฏิบัติการ (iOS/Android), รหัสแบรนด์</td>
+                  <td>Mode, ร้อยละ (%)</td>
+                  <td>Chi-square, Binomial test</td>
+                </tr>
+                <tr>
+                  <td><strong>Ordinal</strong> (อันดับ)</td>
+                  <td>ตัวเลขบอกตำแหน่งสัมพัทธ์ แต่ไม่บอกขนาดผลต่าง</td>
+                  <td>อันดับความชอบ, ส่วนแบ่งการตลาด, ระดับการศึกษา</td>
+                  <td>Median, Percentile</td>
+                  <td>Spearman rank, Mann-Whitney, Friedman</td>
+                </tr>
+                <tr>
+                  <td><strong>Interval</strong> (อันตรภาค)</td>
+                  <td>ผลต่างมีขนาดเท่ากัน <strong>ไม่มีศูนย์แท้ (Arbitrary zero)</strong></td>
+                  <td>อุณหภูมิเซลเซียส/ฟาเรนไฮต์, ทัศนคติ (Likert scale)</td>
+                  <td>Mean (x̄), SD (s)</td>
+                  <td>Pearson r, t-test, ANOVA, Regression</td>
+                </tr>
+                <tr>
+                  <td><strong>Ratio</strong> (อัตราส่วน)</td>
+                  <td>มีคุณสมบัติครบและ <strong>มีศูนย์แท้ (Absolute zero)</strong></td>
+                  <td>อายุ, ยอดขาย, ต้นทุน, เวลาตอบสนองระบบ (Latency)</td>
+                  <td>Geometric/Harmonic mean</td>
+                  <td>Coefficient of variation, พารามิเตอร์ทุกตัว</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="sub-section">
+          <h3 class="sub-title">5.5 เทคนิคการสร้างสเกล (Comparative vs Noncomparative Scales)</h3>
+          <div class="grid-2">
+            <div class="info-card">
+              <div class="card-title">⚖️ Comparative Scales (สเกลเปรียบเทียบ)</div>
+              <ul style="font-size:0.85rem; padding-left:1.2rem; color:var(--text-muted);">
+                <li><strong>Paired Comparison:</strong> เปรียบเทียบทีละคู่ (เช่น Coke vs Pepsi)</li>
+                <li><strong>Rank Order:</strong> จัดลำดับความพึงพอใจ 1 ถึง 5</li>
+                <li><strong>Constant Sum:</strong> แบ่งคะแนนรวม 100 แต้มให้แต่ละคุณสมบัติ</li>
+                <li><em>ข้อดี:</em> จับความแตกต่างเล็กน้อยได้ดี แต่ข้อมูลเป็นระดับ Ordinal</li>
+              </ul>
+            </div>
+            <div class="info-card">
+              <div class="card-title">📏 Noncomparative Scales (สเกลไม่เปรียบเทียบ)</div>
+              <ul style="font-size:0.85rem; padding-left:1.2rem; color:var(--text-muted);">
+                <li><strong>Continuous Rating:</strong> ขีดจุดบนเส้นตรงระหว่างสองขั้ว (Graphic scale)</li>
+                <li><strong>Likert Scale:</strong> 5 หรือ 7 ระดับ (ไม่เห็นด้วยอย่างยิ่ง ➔ เห็นด้วยอย่างยิ่ง)</li>
+                <li><strong>Semantic Differential:</strong> 7 ระดับ มีคำคุณศัพท์ตรงข้ามหัวท้าย (เช่น ทันสมัย ➔ ล้าสมัย)</li>
+                <li><strong>Stapel Scale:</strong> แถบแนวตั้ง -5 ถึง +5 โดยมีคำคุณศัพท์คำเดียวตรงกลาง</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION: CALCULATOR -->
+      <section class="study-section" id="calculator">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <div class="section-icon-badge">🧮</div>
+            <div>
+              <h2 class="section-h2">เครื่องมือคำนวณขนาดตัวอย่าง (Interactive Sample Sizing Calculators)</h2>
+              <div class="section-sub">Yamane, Cochran (Infinite & Finite) & Estimating Mean Formulas</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Calculator 1: Cochran -->
+        <div class="calc-card">
+          <h3 style="font-size:1.1rem; font-weight:700; color:var(--accent-blue); margin-bottom:0.75rem;">
+            1. สูตรของคอแครน (Cochran, 1963) — ประเมินสัดส่วน (Proportion p)
+          </h3>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1rem;">
+            สูตรมาตรฐานระดับบัณฑิตศึกษา: คำนวณแบบไม่ทราบ N ได้ค่า n₀ = (Z² · p · (1-p)) / e² จากนั้นหากทราบ N จะปรับด้วย Finite Population Correction: n = n₀ / (1 + (n₀-1)/N)
+          </p>
+          <div class="calc-grid">
+            <div class="form-group">
+              <label for="cochranPop">ขนาดประชากร (N) [ใส่ 0 ถ้าไม่ทราบ]:</label>
+              <input type="number" id="cochranPop" class="form-control" value="3000">
+            </div>
+            <div class="form-group">
+              <label for="cochranZ">ระดับความเชื่อมั่น (Confidence Level):</label>
+              <select id="cochranZ" class="form-control">
+                <option value="1.96" selected>95% (Z = 1.96)</option>
+                <option value="1.645">90% (Z = 1.645)</option>
+                <option value="2.576">99% (Z = 2.576)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="cochranP">สัดส่วนประชากรที่คาดหวัง (p):</label>
+              <input type="number" id="cochranP" class="form-control" value="0.5" step="0.05" min="0.01" max="0.99">
+            </div>
+            <div class="form-group">
+              <label for="cochranE">ความคลาดเคลื่อนที่ยอมรับได้ (e):</label>
+              <input type="number" id="cochranE" class="form-control" value="0.05" step="0.01" min="0.01" max="0.2">
+            </div>
+          </div>
+          <button class="btn-action btn-primary-action" onclick="calcCochran()">คำนวณขนาดตัวอย่าง (Cochran)</button>
+          
+          <div class="calc-result-box" style="margin-top:1.25rem;">
+            <div class="calc-result-val" id="cochranResult">342 คน</div>
+            <div class="calc-result-note" id="cochranFormulaNote">
+              (เมื่อ N = 3,000 ปรับแก้จาก n₀ = 385 คน ได้ผลลัพธ์ตรงตามตัวอย่างสไลด์ Lecture 5 หน้า 78)
+            </div>
+          </div>
+        </div>
+
+        <!-- Calculator 2: Estimating Mean -->
+        <div class="calc-card">
+          <h3 style="font-size:1.1rem; font-weight:700; color:var(--accent-purple); margin-bottom:0.75rem;">
+            2. สูตรคำนวณขนาดตัวอย่างกรณีประมาณค่าเฉลี่ย μ (Estimating Mean for Infinite Population)
+          </h3>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1rem;">
+            สูตรตามสไลด์ Lecture 5 หน้า 73–75: n = ((Z_α/2 · σ) / E)² (ตัวอย่าง Chicago Bread Expenditure: Z=1.645, σ=4.00, E=1.00 ➔ n ≈ 44)
+          </p>
+          <div class="calc-grid">
+            <div class="form-group">
+              <label for="meanZ">ระดับความเชื่อมั่น (Z):</label>
+              <select id="meanZ" class="form-control">
+                <option value="1.645" selected>90% (Z = 1.645)</option>
+                <option value="1.96">95% (Z = 1.96)</option>
+                <option value="2.576">99% (Z = 2.576)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="meanSD">ส่วนเบี่ยงเบนมาตรฐาน (σ):</label>
+              <input type="number" id="meanSD" class="form-control" value="4.00" step="0.1">
+            </div>
+            <div class="form-group">
+              <label for="meanE">ความคลาดเคลื่อนที่ยอมรับได้ (E):</label>
+              <input type="number" id="meanE" class="form-control" value="1.00" step="0.1">
+            </div>
+          </div>
+          <button class="btn-action btn-primary-action" onclick="calcMeanSample()">คำนวณขนาดตัวอย่าง (Estimating Mean)</button>
+          
+          <div class="calc-result-box" style="margin-top:1.25rem;">
+            <div class="calc-result-val" id="meanResult" style="color:var(--accent-purple);">44 ครอบครัว/คน</div>
+            <div class="calc-result-note" id="meanFormulaNote">
+              n = ((1.645 × 4.00) / 1.00)² = (6.58)² = 43.30 ➔ ปัดขึ้นเป็น 44 (ตรงตามสไลด์ Lecture 5 หน้า 75)
+            </div>
+          </div>
+        </div>
+
+        <!-- Calculator 3: Taro Yamane -->
+        <div class="calc-card">
+          <h3 style="font-size:1.1rem; font-weight:700; color:var(--accent-emerald); margin-bottom:0.75rem;">
+            3. สูตรของทาโร ยามาเน่ (Taro Yamane, 1967)
+          </h3>
+          <div class="calc-grid">
+            <div class="form-group">
+              <label for="yamanePop">ขนาดประชากร (N):</label>
+              <input type="number" id="yamanePop" class="form-control" value="3000">
+            </div>
+            <div class="form-group">
+              <label for="yamaneE">ความคลาดเคลื่อน (e):</label>
+              <input type="number" id="yamaneE" class="form-control" value="0.05" step="0.01">
+            </div>
+          </div>
+          <button class="btn-action btn-primary-action" onclick="calcYamane()">คำนวณ (Yamane)</button>
+          <div class="calc-result-box" style="margin-top:1.25rem;">
+            <div class="calc-result-val" id="yamaneResult" style="color:var(--accent-emerald);">353 คน</div>
+            <div class="calc-result-note">
+              n = N / (1 + N·e²) = 3000 / (1 + 3000(0.0025)) = 3000 / 8.5 = 352.94 ➔ 353 คน
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 6: LECTURE 6 -->
+      <section class="study-section" id="lec6">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <div class="section-icon-badge">📝</div>
+            <div>
+              <h2 class="section-h2">Lecture 6: โครงร่างวิทยานิพนธ์ เล่มสมบูรณ์ และกระบวนการ IRB</h2>
+              <div class="section-sub">Proposal Architecture, TOR, Abstract Writing & Ethical Review (MU-CIRB)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sub-section">
+          <h3 class="sub-title">6.1 ข้อกำหนด TOR: โครงการวิจัยมี TOR vs ไม่มี TOR</h3>
+          <div class="grid-2">
+            <div class="info-card">
+              <div class="card-title">📋 โครงการมี TOR (Terms of Reference)</div>
+              <p style="font-size:0.85rem; color:var(--text-muted);">
+                โครงการวิจัยที่ได้รับทุนหรือดำเนินการตามข้อกำหนดของหน่วยงานภายนอก/ภาครัฐ (เช่น depa, กรมการเปลี่ยนแปลงสภาพภูมิอากาศ) จะมีขอบเขต วัตถุประสงค์ ผลสัมฤทธิ์ที่ส่งมอบ (Deliverables) และงวดงานกำหนดชัดเจน ข้อเสนอโครงการต้องตอบสนองตรงตาม TOR ทุกประการ
+              </p>
+            </div>
+            <div class="info-card">
+              <div class="card-title">💡 โครงการไม่มี TOR (วิทยานิพนธ์ทั่วไป)</div>
+              <p style="font-size:0.85rem; color:var(--text-muted);">
+                งานวิจัยอิสระหรือวิทยานิพนธ์ระดับบัณฑิตศึกษาทั่วไป ซึ่งนักศึกษาร่วมกับอาจารย์ที่ปรึกษาเป็นผู้กำหนดโจทย์ ขอบเขต วัตถุประสงค์ และระเบียบวิธีวิจัยเอง โดยอิงจากช่องว่างทางวิชาการ (Research Gap)
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="sub-section">
+          <h3 class="sub-title">6.2 โครงสร้างข้อเสนอวิทยานิพนธ์ (MU Thesis Proposal - 3 บทแรก)</h3>
+          <div class="grid-3">
+            <div class="info-card" style="border-top:3px solid var(--accent-blue);">
+              <div class="card-title">Chapter 1: Introduction</div>
+              <ul style="font-size:0.85rem; padding-left:1.2rem; color:var(--text-muted);">
+                <li>Background and problem statements</li>
+                <li>Research Motivation</li>
+                <li>Research Objectives</li>
+                <li>Scope of work (ประชากร, เนื้อหา, เทคโนโลยี, เวลา)</li>
+                <li>Expected Results (ประโยชน์ที่คาดว่าจะได้รับ)</li>
+              </ul>
+            </div>
+            <div class="info-card" style="border-top:3px solid var(--accent-purple);">
+              <div class="card-title">Chapter 2: Literature Review</div>
+              <ul style="font-size:0.85rem; padding-left:1.2rem; color:var(--text-muted);">
+                <li>Research Keywords (จาก title / mind map)</li>
+                <li>Related Theory (ทฤษฎีและตัวแบบที่เกี่ยวข้อง)</li>
+                <li>Related Works (งานวิจัยและเอกสารที่เกี่ยวข้อง)</li>
+              </ul>
+            </div>
+            <div class="info-card" style="border-top:3px solid var(--accent-emerald);">
+              <div class="card-title">Chapter 3: Methodology & Plan</div>
+              <ul style="font-size:0.85rem; padding-left:1.2rem; color:var(--text-muted);">
+                <li>Research Flow, Method & Diagram</li>
+                <li>Proposed Scheme / Proposed Framework</li>
+                <li>Details for section, block in the flow</li>
+                <li>Data Collection & Instrument (IOC, Reliability)</li>
+                <li>Timeline / Plan (Gantt Chart)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="sub-section">
+          <h3 class="sub-title">6.3 โครงสร้างบทคัดย่อเชิงวิชาการ 5 ส่วน (IMRAD Abstract Structure)</h3>
+          <div class="info-card" style="background:rgba(255,255,255,0.02);">
+            <div class="grid-3" style="gap:0.75rem;">
+              <div style="padding:0.75rem; background:rgba(56,189,248,0.08); border-radius:8px; border:1px solid rgba(56,189,248,0.2);">
+                <strong style="color:var(--accent-blue);">1. Introduction</strong>
+                <p style="font-size:0.8rem; color:var(--text-muted);">1–2 ประโยค ระบุบริบทและความสำคัญของปัญหาหรือช่องว่างวิจัย</p>
+              </div>
+              <div style="padding:0.75rem; background:rgba(99,102,241,0.08); border-radius:8px; border:1px solid rgba(99,102,241,0.2);">
+                <strong style="color:var(--accent-indigo);">2. Objective</strong>
+                <p style="font-size:0.8rem; color:var(--text-muted);">1 ประโยค ระบุวัตถุประสงค์หลักของงานวิจัย</p>
+              </div>
+              <div style="padding:0.75rem; background:rgba(168,85,247,0.08); border-radius:8px; border:1px solid rgba(168,85,247,0.2);">
+                <strong style="color:var(--accent-purple);">3. Method</strong>
+                <p style="font-size:0.8rem; color:var(--text-muted);">2–3 ประโยค กลุ่มตัวอย่าง เครื่องมือ แบบจำลอง หรือเทคนิคการวิเคราะห์</p>
+              </div>
+              <div style="padding:0.75rem; background:rgba(16,185,129,0.08); border-radius:8px; border:1px solid rgba(16,185,129,0.2);">
+                <strong style="color:var(--accent-emerald);">4. Results</strong>
+                <p style="font-size:0.8rem; color:var(--text-muted);">2–3 ประโยค สรุปค้นพบสำคัญเชิงประจักษ์ สถิติ หรือประสิทธิภาพโมเดล</p>
+              </div>
+              <div style="padding:0.75rem; background:rgba(245,158,11,0.08); border-radius:8px; border:1px solid rgba(245,158,11,0.2);">
+                <strong style="color:var(--accent-amber);">5. Conclusion</strong>
+                <p style="font-size:0.8rem; color:var(--text-muted);">1–2 ประโยค ชี้ให้เห็นประโยชน์ การประยุกต์ใช้ หรือข้อเสนอแนะเชิงนโยบาย</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sub-section">
+          <h3 class="sub-title">6.4 กระบวนการขอรับรองจริยธรรมการวิจัยในมนุษย์ (MU-CIRB มหาวิทยาลัยมหิดล)</h3>
+          <p style="font-size:0.875rem; color:var(--text-muted); margin-bottom:1rem;">
+            งานวิจัยที่มีการเก็บข้อมูลจากมนุษย์ต้องผ่านการรับรองจาก <strong>MU-CIRB (Center for Institutional Review Board)</strong> ก่อนเก็บข้อมูลจริง:
+          </p>
+          <div class="grid-3">
+            <div class="info-card">
+              <div class="card-title">ขั้นที่ 1: อบรมและสอบ CITI</div>
+              <p style="font-size:0.85rem; color:var(--text-muted);">
+                ลงทะเบียนอบรมและสอบออนไลน์ผ่าน <strong>CITI Program</strong> (Collaborative Institutional Training Initiative) ในหลักสูตร Human Subjects Research (HSR-SBR) เพื่อรับใบประกาศนียบัตร (Certificate)
+              </p>
+            </div>
+            <div class="info-card">
+              <div class="card-title">ขั้นที่ 2: จัดเตรียมเอกสาร</div>
+              <p style="font-size:0.85rem; color:var(--text-muted);">
+                จัดทำ Research Proposal, <strong>Informed Consent Form</strong> (เอกสารชี้แจงและแสดงเจตนายินยอม), เครื่องมือวิจัย และแบบประเมินความเสี่ยง (Self-assessment Checklist)
+              </p>
+            </div>
+            <div class="info-card">
+              <div class="card-title">ขั้นที่ 3: ยื่นระบบออนไลน์</div>
+              <p style="font-size:0.85rem; color:var(--text-muted);">
+                ยื่นข้อเสนอผ่านระบบออนไลน์ของ MU-CIRB เข้าสู่กระบวนการพิจารณาตามระดับความเสี่ยงของโครงการ
+              </p>
+            </div>
+          </div>
+
+          <div style="margin-top:1.25rem;">
+            <h4 style="font-size:0.95rem; font-weight:600; margin-bottom:0.5rem; color:var(--accent-blue);">ประเภทการพิจารณาโครงการ (3 Initial Review Levels):</h4>
+            <div class="table-container">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>ประเภทการพิจารณา</th>
+                    <th>ระดับความเสี่ยง (Risk Level)</th>
+                    <th>ตัวอย่างงานวิจัยที่เข้าข่าย</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>1. ยกเว้นการกำกับดูแล<br>(Exemption Review)</strong></td>
+                    <td>ความเสี่ยงต่ำมาก (Less than minimal risk)</td>
+                    <td>แบบสอบถาม/แบบสำรวจ หรือสัมภาษณ์ที่ไม่ระบุตัวตน (Anonymous survey), การวิเคราะห์ข้อมูลทุติยภูมิที่เปิดเผยต่อสาธารณะ</td>
+                  </tr>
+                  <tr>
+                    <td><strong>2. พิจารณาแบบเร่งด่วน<br>(Expedited Review)</strong></td>
+                    <td>ความเสี่ยงปานกลาง ไม่เกินระดับชีวิตประจำวัน (Minimal Risk)</td>
+                    <td>สัมภาษณ์ที่มีการระบุตัวตน แต่มีมาตรการรักษาความลับและการเข้ารหัสข้อมูลอย่างรัดกุม ไม่ก่อให้เกิดความเสียหาย</td>
+                  </tr>
+                  <tr>
+                    <td><strong>3. พิจารณาเต็มองค์ประชุม<br>(Full Board Review)</strong></td>
+                    <td>ความเสี่ยงสูง (Greater than minimal risk)</td>
+                    <td>การทดลองทางการแพทย์, การวิจัยในกลุ่มเปราะบาง (Vulnerable populations เช่น เด็ก ผู้ป่วย ผู้ต้องขัง สตรีมีครรภ์)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION: SCENARIOS & ESSAY -->
+      <section class="study-section" id="scenarios">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <div class="section-icon-badge">💡</div>
+            <div>
+              <h2 class="section-h2">กลยุทธ์การทำข้อสอบ & สูตรการเขียนตอบข้อสอบอัตนัย</h2>
+              <div class="section-sub">State ➔ Apply ➔ Critical Justify Formula & Real-world Scenario Breakdowns</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sub-section">
+          <h3 class="sub-title">สูตร 3 จังหวะพิชิตข้อสอบอัตนัยระดับบัณฑิตศึกษา</h3>
+          <div class="grid-3">
+            <div class="info-card" style="border-left:4px solid var(--accent-blue);">
+              <div class="card-title">1. State Principle</div>
+              <p style="font-size:0.85rem; color:var(--text-muted);">
+                ระบุทฤษฎี นิยาม หรือระเบียบวิธีวิจัยที่เกี่ยวข้องให้แม่นยำ เช่น ระดับการวัด NOIR, ทฤษฎี TAM, หรือหลักการออกแบบการทดลอง
+              </p>
+            </div>
+            <div class="info-card" style="border-left:4px solid var(--accent-purple);">
+              <div class="card-title">2. Apply to Scenario</div>
+              <p style="font-size:0.85rem; color:var(--text-muted);">
+                เชื่อมโยงหลักการเข้ากับบริบท ตัวละคร ระบบ หรือตัวแปรในโจทย์ เช่น ระบุว่าสิ่งใดคือ IV, DV, Extraneous Variable หรือประชากรเป้าหมาย
+              </p>
+            </div>
+            <div class="info-card" style="border-left:4px solid var(--accent-emerald);">
+              <div class="card-title">3. Critical Justify</div>
+              <p style="font-size:0.85rem; color:var(--text-muted);">
+                ให้เหตุผลเชิงวิเคราะห์ แสดงการจัดการความเสี่ยง ข้อดี-ข้อเสีย การควบคุมความแปรปรวนแทรกซ้อน และการขอรับรองจริยธรรม MU-CIRB
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="sub-section">
+          <h3 class="sub-title">ตัวอย่างการวิเคราะห์ข้อสอบสถานการณ์ (Grab Taxi Case Study)</h3>
+          <div class="info-card" style="background:rgba(255,255,255,0.02);">
+            <p style="font-size:0.9rem; margin-bottom:0.75rem;">
+              <strong>โจทย์:</strong> บริษัทพัฒนาแพลตฟอร์มต้องการศึกษาว่า การนำแคมเปญ Incentive ใหม่มาใช้ ส่งผลต่อรายได้และทัศนคติของคนขับ Grab Taxi หรือไม่ โดยมีประชากรคนขับ 3,000 คนในกรุงเทพฯ จงออกแบบการวิจัย
+            </p>
+            <div style="font-size:0.85rem; color:var(--text-muted); line-height:1.7;">
+              • <strong>ประเภทการวิจัย:</strong> Quasi-experimental หรือ Survey ร่วมกับ Data Analytics<br>
+              • <strong>ตัวแปรอิสระ (IV):</strong> แคมเปญ Incentive ใหม่ (Treatment variable)<br>
+              • <strong>ตัวแปรตาม (DV):</strong> รายได้เฉลี่ยต่อวัน (Ratio Scale) และทัศนคติความพึงพอใจ (Interval Scale / Likert 5 ระดับ)<br>
+              • <strong>ตัวแปรแทรกซ้อน (Extraneous Variable):</strong> สภาพการจราจร, วันในสัปดาห์, สภาพอากาศ, ราคาน้ำมัน (ต้องควบคุมด้วยการ Matching หรือจัดบล็อก Blocking)<br>
+              • <strong>ขนาดกลุ่มตัวอย่าง:</strong> ประชากร N = 3,000 คำนวณด้วยสูตร Cochran ปรับแก้ Finite Population Correction ได้ <strong>342 คน</strong><br>
+              • <strong>การตรวจสอบเครื่องมือ:</strong> หาค่า IOC จากผู้เชี่ยวชาญ 3 หรือ 5 ท่าน (เกณฑ์ผ่าน ≥ 0.50) และทดสอบความเที่ยง Cronbach's α ≥ 0.70 กับคนขับ 30 คน<br>
+              • <strong>จริยธรรมวิจัย:</strong> ยื่นขอรับรอง MU-CIRB ประเภท Expedited Review เนื่องจากมีการเก็บข้อมูลรายได้และพฤติกรรมคนขับ
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION: FLASHCARDS -->
+      <section class="study-section" id="flashcards">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <div class="section-icon-badge">⚡</div>
+            <div>
+              <h2 class="section-h2">คลังการ์ดช่วยจำด่วน (Interactive Flashcards - 16 ใบ)</h2>
+              <div class="section-sub">คลิกที่การ์ดเพื่อพลิกดูเฉลย จุดสังเกต และคีย์เวิร์ดตัดตัวเลือกข้อสอบ</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flashcard-deck" id="flashcardDeck">
+          <!-- Flashcards rendered by JS -->
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script>
+    // Flashcard Data (16 cards covering Lectures 1 to 6)
+    var flashcardsData = [
+      {
+        q: "Ontology vs. Epistemology ต่างกันอย่างไร?",
+        hint: "ปรัชญาการวิจัย (Lecture 1)",
+        a: "<b>Ontology (สัจวิทยา):</b> ศึกษาธรรมชาติของความจริง (ความจริงมีอยู่จริง หรือมนุษย์สร้างขึ้น)<br><b>Epistemology (ญาณวิทยา):</b> ศึกษาการได้มาซึ่งความรู้ และความสัมพันธ์ระหว่างผู้วิจัยกับสิ่งที่ถูกศึกษา"
+      },
+      {
+        q: "Research Method vs. Research Methodology แตกต่างกันอย่างไร?",
+        hint: "นิยามพื้นฐาน (Lecture 1)",
+        a: "<b>Method:</b> เครื่องมือหรือเทคนิคเฉพาะทางในการเก็บและวิเคราะห์ข้อมูล (เช่น แบบสอบถาม สถิติ)<br><b>Methodology:</b> ศาสตร์ ปรัชญา และตรรกะเบื้องหลังการเลือกใช้วิธีการวิจัยเพื่อตอบโจทย์อย่างเป็นระบบ"
+      },
+      {
+        q: "Salkind จำแนกประเภทการวิจัยตามเกณฑ์ใดบ้าง?",
+        hint: "เกณฑ์ 3 ด้าน (Lecture 1)",
+        a: "1. <b>Based on Methods:</b> Historical, Descriptive, Correlational, Qualitative, Experimental<br>2. <b>Based on Purposes:</b> Basic/Pure vs. Applied/Development<br>3. <b>Based on Ability to Experiment:</b> Experimental vs. Non-experimental"
+      },
+      {
+        q: "Journal Quartile Score (Q1-Q4) แบ่งเกณฑ์อย่างไร?",
+        hint: "คุณภาพวารสาร (Lecture 2)",
+        a: "<b>Q1:</b> Top 25% สูงสุดในสาขา<br><b>Q2:</b> 25% – 50% กลางค่อนสูง<br><b>Q3:</b> 50% – 75% กลางค่อนต่ำ<br><b>Q4:</b> Bottom 25% กลุ่มท้ายของสาขา"
+      },
+      {
+        q: "กฎ Fair Use ของการใช้งาน Academic E-Database มีข้อห้ามอะไร?",
+        hint: "จริยธรรมฐานข้อมูล (Lecture 2)",
+        a: "<b>ห้าม</b> ใช้ Robot, Crawler หรือ Download Manager ดาวน์โหลดอัตโนมัติ และ <b>ห้าม</b> ดาวน์โหลดเหมาเล่ม (Whole issue) มิฉะนั้นจะถูก <b>Block IP ทั้งมหาวิทยาลัย</b>"
+      },
+      {
+        q: "ช่องว่างการวิจัย (Research Gaps) มี 5 ประเภทอะไรบ้าง?",
+        hint: "การทบทวนวรรณกรรม (Lecture 3)",
+        a: "1. <b>Knowledge-based:</b> ยังไม่รู้/รู้ไม่พอ<br>2. <b>Relationship-based:</b> ไม่แน่ใจความสัมพันธ์<br>3. <b>Theory-based:</b> ทฤษฎียังไม่เคยทดสอบในบริบทนี้<br>4. <b>Methodological:</b> ใช้วิธีวิจัยใหม่<br>5. <b>Analytical:</b> ใช้มุมมอง/เทคนิควิเคราะห์ใหม่"
+      },
+      {
+        q: "DeLone & McLean IS Success Model วัดคุณภาพ 3 มิติใด?",
+        hint: "ทฤษฎี IT (Lecture 3)",
+        a: "1. <b>System Quality:</b> ความเสถียร สมรรถนะระบบ<br>2. <b>Information Quality:</b> ความถูกต้อง แม่นยำ ทันสมัยของข้อมูล<br>3. <b>Service Quality:</b> คุณภาพการสนับสนุนและบริการดูแลผู้ใช้"
+      },
+      {
+        q: "สมมติฐานแบบ Nondirectional vs. Directional ต่างกันอย่างไร?",
+        hint: "การตั้งสมมติฐาน (Lecture 4)",
+        a: "<b>Nondirectional (สองทาง):</b> มีความแตกต่างแต่ไม่ระบุทิศทาง เช่น 'รายได้ Grab ต่างจากแท็กซี่ทั่วไป'<br><b>Directional (ทางเดียว):</b> ระบุทิศทางชัดเจน เช่น 'รายได้ Grab <i>สูงกว่า</i> แท็กซี่ทั่วไป'"
+      },
+      {
+        q: "ตัวแปรแทรกซ้อน (Extraneous Variable) คืออะไร และเรียกอีกอย่างว่าอะไร?",
+        hint: "การออกแบบการทดลอง (Lecture 4)",
+        a: "ตัวแปรอิสระอื่นที่ไม่ได้อยู่ในวัตถุประสงค์ของการวิจัย แต่สามารถส่งผลกระทบต่อตัวแปรตามได้ เรียกอีกอย่างว่า <b>Threatening variable</b> หากไม่ควบคุมจะเกิด <b>Confounded relationship</b>"
+      },
+      {
+        q: "หลัก 3 ประการของการทดลอง (Fisher) มีอะไรบ้าง?",
+        hint: "3 Principles of Experiment (Lecture 4)",
+        a: "1. <b>Randomization:</b> สุ่มหน่วยทดลองเพื่อขจัดอคติ<br>2. <b>Replication:</b> ทำการทดลองซ้ำเพื่อลด experimental error<br>3. <b>Local Control:</b> ปรับสมดุล (Balancing) และจัดบล็อก (Blocking)"
+      },
+      {
+        q: "เกณฑ์การคัดเลือกผู้เชี่ยวชาญทำ IOC มีอะไรบ้าง?",
+        hint: "คุณภาพเครื่องมือ (Lecture 5)",
+        a: "• จำนวนเป็นเลขคี่ (3 หรือ 5 ท่าน)<br>• ครอบคลุม 3 ด้าน: Content, Research Method, Practitioner<br>• ป.โทขึ้นไป/ป.เอก ประสบการณ์ตรง ≥ 5 ปี มาจากหลายสถาบัน<br>• เกณฑ์ผ่าน IOC ≥ 0.50"
+      },
+      {
+        q: "สเกล NOIR 4 ระดับ อุณหภูมิเซลเซียสเป็นระดับใด เพราะเหตุใด?",
+        hint: "ระดับการวัด (Lecture 5)",
+        a: "เป็น <b>Interval Scale (อันตรภาค)</b> เพราะมีระยะห่างเท่ากัน แต่ <b>ไม่มีศูนย์แท้ (0°C ไม่ได้แปลว่าไม่มีความร้อน)</b> ไม่สามารถบอกว่าเป็น 2 เท่าได้"
+      },
+      {
+        q: "Central Limit Theorem (CLT) กล่าวถึงเงื่อนไขขนาดตัวอย่างไว้อย่างไร?",
+        hint: "ทฤษฎีขีดจำกัดส่วนกลาง (Lecture 5)",
+        a: "หากขนาดตัวอย่างมีขนาดใหญ่เพียงพอ (<b>n ≥ 30</b>) การแจกแจงของค่าเฉลี่ยตัวอย่าง (x̄) จะเข้าใกล้ <b>การแจกแจงปกติ (Normal Distribution)</b> เสมอ โดยมี Mean = μ และ SE = σ/√n"
+      },
+      {
+        q: "สูตร Cochran (1963) กรณี N=3,000 จะได้ขนาดตัวอย่างเท่าใด?",
+        hint: "การคำนวณขนาดตัวอย่าง (Lecture 5)",
+        a: "ขั้นแรก n₀ = (1.96² × 0.5 × 0.5) / 0.05² = 385 คน<br>ขั้นสอง Finite correction: n = 385 / (1 + 384/3000) = <b>342 คน</b> (ตรงตามสไลด์หน้า 78)"
+      },
+      {
+        q: "Proposal แบบมี TOR แตกต่างจากไม่มี TOR อย่างไร?",
+        hint: "การเขียนข้อเสนอโครงการ (Lecture 6)",
+        a: "<b>มี TOR:</b> โครงการรับทุน/ภาครัฐ มีข้อกำหนด ขอบเขต Deliverables และงวดงานบังคับชัดเจน<br><b>ไม่มี TOR:</b> วิทยานิพนธ์ทั่วไปที่นักศึกษาร่วมกับอาจารย์ที่ปรึกษากำหนดขอบเขตเอง"
+      },
+      {
+        q: "กระบวนการขอรับรอง MU-CIRB มี 3 ระดับการพิจารณาอะไรบ้าง?",
+        hint: "จริยธรรมการวิจัยในคน (Lecture 6)",
+        a: "1. <b>Exemption (ยกเว้นการกำกับดูแล):</b> ความเสี่ยงต่ำมาก / แบบสอบถาม Anonymous<br>2. <b>Expedited (เร่งด่วน):</b> ความเสี่ยงไม่เกิน Minimal Risk มีการคุ้มครองข้อมูลรัดกุม<br>3. <b>Full Board (เต็มองค์ประชุม):</b> ความเสี่ยงสูง / ยา / กลุ่มเปราะบาง (Vulnerable)"
+      }
+    ];
+
+    function renderFlashcards() {
+      var container = document.getElementById('flashcardDeck');
+      container.innerHTML = flashcardsData.map(function(card, idx) {
+        return '<div class="flashcard" onclick="this.classList.toggle(\\'flipped\\')">' +
+          '<div class="flashcard-inner">' +
+            '<div class="flashcard-front">' +
+              '<span class="tag" style="margin-bottom:0.75rem;">การ์ด #' + (idx + 1) + '</span>' +
+              '<div class="flashcard-q">' + card.q + '</div>' +
+              '<div class="flashcard-hint">💡 ' + card.hint + '</div>' +
+              '<small style="color:var(--text-dim); margin-top:0.75rem; font-size:0.75rem;">(คลิกเพื่อพลิกดูเฉลย)</small>' +
+            '</div>' +
+            '<div class="flashcard-back">' +
+              '<span class="tag tag-emerald" style="margin-bottom:0.5rem;">เฉลย & จุดจำ</span>' +
+              '<div class="flashcard-a">' + card.a + '</div>' +
+            '</div>' +
+          '</div>' +
+        '</div>';
+      }).join('');
+    }
+
+    // Calculators
+    function calcCochran() {
+      var N = parseFloat(document.getElementById('cochranPop').value) || 0;
+      var z = parseFloat(document.getElementById('cochranZ').value);
+      var p = parseFloat(document.getElementById('cochranP').value);
+      var e = parseFloat(document.getElementById('cochranE').value);
+
+      var n0 = (Math.pow(z, 2) * p * (1 - p)) / Math.pow(e, 2);
+      var nFinal = n0;
+      if (N > 0) {
+        nFinal = n0 / (1 + (n0 - 1) / N);
+      }
+      var rounded = Math.ceil(nFinal);
+      document.getElementById('cochranResult').innerText = rounded + ' คน';
+      document.getElementById('cochranFormulaNote').innerText = N > 0 
+        ? 'n₀ = ' + Math.ceil(n0) + ' คน ➔ ปรับแก้ Finite Population Correction (N=' + N + ') ได้ ' + rounded + ' คน'
+        : 'ไม่ทราบขนาดประชากร (Infinite) ได้ n₀ = ' + rounded + ' คน';
+    }
+
+    function calcMeanSample() {
+      var z = parseFloat(document.getElementById('meanZ').value);
+      var sd = parseFloat(document.getElementById('meanSD').value);
+      var E = parseFloat(document.getElementById('meanE').value);
+
+      var n = Math.pow((z * sd) / E, 2);
+      var rounded = Math.ceil(n);
+      document.getElementById('meanResult').innerText = rounded + ' ครอบครัว/คน';
+      document.getElementById('meanFormulaNote').innerText = 'n = ((' + z + ' × ' + sd + ') / ' + E + ')² = (' + ((z*sd)/E).toFixed(2) + ')² = ' + n.toFixed(2) + ' ➔ ปัดขึ้นเป็น ' + rounded;
+    }
+
+    function calcYamane() {
+      var N = parseFloat(document.getElementById('yamanePop').value);
+      var e = parseFloat(document.getElementById('yamaneE').value);
+      if (!N || !e) return;
+      var n = N / (1 + N * Math.pow(e, 2));
+      document.getElementById('yamaneResult').innerText = Math.ceil(n) + ' คน';
+    }
+
+    // Live search filter
+    function filterContent() {
+      var input = document.getElementById('searchInput').value.toLowerCase();
+      var sections = document.querySelectorAll('.study-section');
+      sections.forEach(function(sec) {
+        var text = sec.innerText.toLowerCase();
+        if (text.includes(input)) {
+          sec.style.display = 'block';
+        } else {
+          sec.style.display = 'none';
+        }
+      });
+    }
+
+    // Init
+    window.onload = function() {
+      renderFlashcards();
+    };
+  </script>
+</body>
+</html>
